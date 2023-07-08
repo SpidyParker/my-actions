@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo $USER
+echo $NAME
 
-echo $Hobby
+echo $HOBBY

@@ -12,7 +12,9 @@ jobs:
         steps:
         - uses: actions/checkout@v3
         - name: "Setup a User"
-          run : echo "name=Raj" >> $GITHUB_ENV
+          run : |
+            echo "NAME=Raj" >> $GITHUB_ENV
+            echo "HOBBY=OpenSource" >> $GITHUB_ENV
         - name : "Run Script"
           run: ./script.sh
         
