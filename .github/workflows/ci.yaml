@@ -25,7 +25,6 @@ jobs:
             SAVEIFS=$IFS
             echo '${{ toJSON(github.event.inputs) }}' | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
               echo "${key^^}='$value'" >> $GITHUB_ENV
-              echo "${key^^} '$value'"
             done
             IFS=$SAVEIFS
         - name : "Run Script"
