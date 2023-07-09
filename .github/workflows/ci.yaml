@@ -2,15 +2,23 @@ name: CI
 run-name: "CI workflow"
 
 on:
-    push:
-        branches:
-        - main
+    workflow_dispatch:
+      inputs:
+        stage:
+          description: "Environment"
+          type: "string"
+          required: true
+        version:
+          description: "version"
+          required: true
 
 jobs:
     context:
         runs-on: ubuntu-latest
         steps:
         - uses: actions/checkout@v3
+        - name: Print inputs in JSON 
+          run: echo "${{ toJSON(github.event.inputs) }}"
         - name: "Setup a User"
           run : |
             echo "NAME=Raj" >> $GITHUB_ENV
