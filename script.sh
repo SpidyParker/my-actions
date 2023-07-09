@@ -1,5 +1,4 @@
 #!/bin/bash
 
-echo $NAME
-
-echo $HOBBY
+echo $ENV
+echo $VERSION
