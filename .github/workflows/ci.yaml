@@ -23,9 +23,11 @@ jobs:
           shell: bash
           run: |
             echo "${{ toJSON(github.event.inputs) }}" > inputs.json
-            cat inputs.json | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
-              echo "${key^^}='$value'" >> $GITHUB_ENV
-            done
+            cat inputs.json
+
+            # cat inputs.json | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
+            #   echo "${key^^}='$value'" >> $GITHUB_ENV
+            # done
             rm inputs.json
         - name : "Run Script"
           run: ./script.sh
