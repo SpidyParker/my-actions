@@ -1,5 +1,5 @@
-name: CI
-run-name: "CI workflow"
+name: Demo
+run-name: "Demo workflow"
 
 on:
     workflow_dispatch:
