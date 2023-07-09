@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo $STAGE
-echo $VERSION
+echo "Stage:$STAGE"
+echo "Version:$VERSION"
