@@ -22,7 +22,7 @@ jobs:
         - name: Try setting up env
           shell: bash
           run: |
-            echo "${{ toJSON(github.event.inputs) }}" | jq -r 'to_entries'
+            echo "${{ toJSON(github.event.inputs) }}" | jq -r '.'
             # echo "${{ toJSON(github.event.inputs) }}" | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
             #   echo "${key^^}='$value'" >> $GITHUB_ENV
             # done
