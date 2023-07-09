@@ -1,0 +1,10 @@
+{
+    "name":"Mahesh",
+    "age": "v2.0.1",
+    "Location":"Pune",
+    "Address": {
+        "Area":"Katraj",
+        "Pincode":"411037",
+        "City": "Pune 37"
+    }
+}
