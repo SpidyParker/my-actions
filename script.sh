@@ -1,4 +1,4 @@
 #!/bin/bash
 
-echo $ENV
+echo $STAGE
 echo $VERSION

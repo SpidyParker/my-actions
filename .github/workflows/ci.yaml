@@ -22,10 +22,11 @@ jobs:
         - name: Try setting up env
           shell: bash
           run: |
-            
+            SAVEIFS=$IFS
             echo '${{ toJSON(github.event.inputs) }}' | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
               echo "${key^^}='$value'" >> $GITHUB_ENV
             done
+            IFS=$SAVEIFS
         - name : "Run Script"
           run: ./script.sh
         
