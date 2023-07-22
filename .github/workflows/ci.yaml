@@ -29,4 +29,11 @@ jobs:
             IFS=$SAVEIFS
         - name : "Run Script"
           run: ./script.sh
+        - run: exit 1
+    
+    test:
+        needs: context
+        runs-on: ubuntu-latest
+        steps:
+        - run: echo "This will run"
         
