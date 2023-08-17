@@ -13,27 +13,11 @@ on:
           required: true
 
 jobs:
-    context:
-        runs-on: ubuntu-latest
-        steps:
+    ci:
+      runs-on: ubuntu-latest
+      steps:
         - uses: actions/checkout@v3
-        - name: Print inputs in JSON 
-          run: echo "${{ toJSON(inputs) }}"
-        - name: Try setting up env
-          shell: bash
-          run: |
-            SAVEIFS=$IFS
-            echo '${{ toJSON(inputs) }}' | jq -r 'to_entries | map("\(.key)=\(.value|tostring)")| .[]' | while IFS='=' read key value; do
-              echo "${key^^}='$value'" >> $GITHUB_ENV
-            done
-            IFS=$SAVEIFS
-        - name : "Run Script"
-          run: ./script.sh
-        - run: exit 1
-    
-    test:
-        needs: context
-        runs-on: ubuntu-latest
-        steps:
-        - run: echo "This will run"
+        - run: |
+            sleep 180
+        - run: echo "Hello World!"
         
