@@ -2,15 +2,10 @@ name: CI
 run-name: "CI workflow"
 
 on:
-    workflow_dispatch:
-      inputs:
-        stage:
-          description: "Environment"
-          type: "string"
-          required: true
-        version:
-          description: "version"
-          required: true
+    push:
+      branches: ["*"]
+    pull_request: 
+      types: [opened]
 
 jobs:
     ci:
