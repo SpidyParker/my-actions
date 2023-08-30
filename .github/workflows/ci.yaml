@@ -13,6 +13,6 @@ jobs:
       steps:
         - uses: actions/checkout@v3
         - run: |
-            sleep 180
+            sleep 120
         - run: echo "Hello World!"
         
